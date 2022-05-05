@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/log.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+<body>
+    <header class="container" id="header">
+        <div class="container is-light columns">
+            <div class="column is-2">
+                <figure class="image is-128x128">
+                    <img src="img/logo.png"style="border-radius: 150px;
+                                                  border:5px solid #666;">
+                </figure>
+            </div>
+            <nav class="navbar column is-8 has-text-centered has-shadow" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="menu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="menu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link is-size-4 has-text-weight-bold">
+                                Nuestro menu
+                            </a>
+
+                            <div class="navbar-dropdown ">
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Desayuno
+                                </a>
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Almuerzo
+                                </a>
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Cena
+                                </a>
+                                <hr class="navbar-divider">
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Reportar un problema
+                                </a>
+                            </div>
+                        </div>
+
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="index.html">
+                            Inicio
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="#contactos">
+                            Contactos
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="Ultimo.html">
+                            Lo ultimo
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="https://www.google.com/maps/@-19.559812,-65.7620635,3a,75y,54.28h,76.44t/data=!3m6!1e1!3m4!1sfnQPzPd_IPHgQ0H-vFY7rw!2e0!7i13312!8i6656">
+                            Localizar
+                        </a>
+
+                    </div>
+                </div>
+            </nav>
+            <div class=" column is-2 buttons pt-6">
+
+            </div>
+        </div>
+
+    </header>
+    <secction class="columns">
+        <form class="container column is-7" action="#" id="agregar">
+            <div class="field " >
+                <label class="label">Nombre</label>
+                <div class="control">
+                    <input id="nombre" class="input is-info" type="text" placeholder="Ingrese su nombre completo" >
+                </div>
+            </div>
+            
+            <div class="field ">
+                <label class="label">Apellido Paterno</label>
+                <div class="control">
+                    <input id="apellido_p" class="input is-info" type="text" placeholder="Ingrese su nombre completo" >
+                </div>
+            </div>
+            <div class="field ">
+                <label class="label">Apellido materno</label>
+                <div class="control">
+                    <input id="apellido_m" class="input is-info" type="text" placeholder="Ingrese su nombre completo" >
+                </div>
+            </div>
+            <div class="field " >
+                <label class="label">correo</label>
+                <div class="control">
+                    <input id="correo"  class="input is-info" type="email" placeholder="Ingrese su nombre completo" >
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Ingrece su numero telefonico o celular</label>
+                <div class="control ">
+                    <input id="celular" class="input is-info" type="text" placeholder="ejemplo:7777777" value="">
+                </div>
+            </div>
+            <div class="field">
+            <label class="label">Ingrece su pedido aqui</label>
+            <div class="control">
+                <textarea id="detalle" class="textarea is-primary" placeholder="Textarea"></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Ingrece su direccion</label>
+                <div class="control">
+                    <textarea id="direccion" class="textarea is-primary" placeholder="Introdusca su direccion con la mayor cantidad de detalles posible"></textarea>
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <input id="agregar" class="button is-link" type="submit" value="enviar" >
+                </div>
+                <div class="control">
+                    <input class="button is-link is-light" type="reset" value="cancelar">
+                </div>
+            </div>
+        </form>
+        </secction>
+         <section id="contactos" class="mt-6 pt-6">
+            <div class="container">
+                <section class="hero is-$black-bis	">
+                    <div class="hero-body">
+                        <div class="container has-text-centered">
+                            <h2 class="title">
+                                Contactos
+                            </h2>
+                            <div class="columns">
+                                <div class="column">Calular: 777777</div>
+                                <div class="column"> <a href="">twiter</a> </div>
+                                <div class="column has-centered"> <a href=""> facebook</a></div>
+                                <div class="column"> <a href="">instagram</a></div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, magni tenetur? Suscipit consequuntur, tempora nostrum praesentium blanditiis dicta repudiandae soluta. Ut ab blanditiis ducimus deserunt nostrum fuga facilis ea distinctio.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non perspiciatis corrupti, officia enim distinctio beatae. Recusandae at ipsam in ducimus sint, dolores, a illum, laborum adipisci quas sed nulla officia!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Arcane</strong> por <a href="https://jgthms.com">Carlos Mario Toro Martinez</a>. The source code
+                    is licensed
+                    Todos los derechos recervados
+                </p>
+            </div>
+        </footer>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+
+        <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCp7Zk4jJmtu1K-LD-ctFTXN0-mWDkcQB8",
+            authDomain: "proyecto-arcane.firebaseapp.com",
+            databaseURL: "https://proyecto-arcane.firebaseio.com",
+            projectId: "proyecto-arcane",
+            storageBucket: "proyecto-arcane.appspot.com",
+            messagingSenderId: "774102170492",
+            appId: "1:774102170492:web:edb9e730c5f79838cc02f9",
+            measurementId: "G-JC37XD5RZ6"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        </script>
+        <script src="javascript/admin.js"></script>
+        </body>
+        </html>

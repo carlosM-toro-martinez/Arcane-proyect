@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCANE</title>
+    <link rel="shortcut icon" href="img/log.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+</head>
+
+<body onload="observador('')">
+    <header class="container" id="header">
+        <div class="container is-light columns">
+            <div class="column is-2">
+                <figure class="image is-128x128">
+                    <img src="img/logo.png"style="border-radius: 150px;
+                                                  border:5px solid #666;">
+                </figure>
+            </div>
+            <nav class="navbar column is-8 has-text-centered has-shadow" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="menu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="menu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link is-size-4 has-text-weight-bold">
+                                Nuestro menu
+                            </a>
+
+                            <div class="navbar-dropdown ">
+                                <a class="navbar-item is-size-4 has-text-weight-bold" id="d">
+                                    bebidas
+                                </a>
+                                <a class="navbar-item is-size-4 has-text-weight-bold" id="e">
+                                    Especiales
+                                </a>
+                                <a class="navbar-item is-size-4 has-text-weight-bold" id="c">
+                                    Hamburguesas
+                                </a>
+                                <hr class="navbar-divider">
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Reportar un problema
+                                </a>
+                            </div>
+                        </div>
+
+                        <a class="navbar-item has-text-link is-size-4 has-text-weight-bold" href="#">
+                            Inicio
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="#contactos">
+                            Contactos
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="Ultimo.html">
+                            Lo ultimo
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="https://www.google.com/maps/@-19.559812,-65.7620635,3a,75y,54.28h,76.44t/data=!3m6!1e1!3m4!1sfnQPzPd_IPHgQ0H-vFY7rw!2e0!7i13312!8i6656">
+                            Localizar
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="#" id="cerrar" style="display: none;" >
+                            Cerrar Session
+                        </a>
+
+                    </div>
+                </div>
+            </nav>
+            <div class=" column is-2 buttons pt-6">
+                <a class="button is-light  mt-5" href="formularioPedido.html" id="pedidos" style="display: none;">
+                    <strong class="">Ordena Ahora</strong>
+                </a>
+                <button id="abrir"  class="button is-light mt-5" style="display: block;"><strong>Iniciar Session</strong></button>
+                <a id="administrador" class="button is-light mt-5" href="Pedidos.html" id="pedidos" style="display: none;"id="administrador" >
+                    <strong>ver pedidos</strong>
+                </a>
+                
+            </div>
+            <div>
+                <div class="modal" id="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content mb-6">
+                        <div class="box mt-6">
+                            <h2 class="title has-text-centered is-danger mb-6">INICIAR SESSION </h2>
+                                <div class="field">
+                                    <label class="label">Email</label>
+                                    <div class="control">
+                                    <input class="input" type="email" placeholder=" alexsmith@gmail.com" id="correo">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Name</label>
+                                    <div class="control">
+                                    <input class="input" type="password" placeholder="******" id="contrasena">
+                                    </div>
+                                </div>
+                                <div class="field is-grouped mt-6 has-text-centered columns ">
+                                    <div class="control column">
+                                        <button class="button is-link is-block is-large is-fullwidth" id="iniciar">Submit</button>
+                                    </div>
+                                    <div class="control column">
+                                        <button class="button is-link is-light is-block is-large is-fullwidth">Cancel</button>
+                                    </div>
+                                </div>
+                                <p class="has-text-grey has-text-centered" >
+                                    <a href="registrarse.html">Registrarse </a> &nbsp;·&nbsp;
+                                    <a href="../">Olvidó su contraseña </a> &nbsp;·&nbsp;
+                                    <a href="../">¿Necesita ayuda? </a>
+                                </p>
+                        </div>
+                    </div>
+                    <button class="modal-close is-large" aria-label="close" ></button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <section class="container mt-6">
+        <div class="columns ">
+            <aside class="column is">
+                <h2 class="title has-text-centered"> OFERTAS </h2>
+                <div class="mt-6">
+                    <figure class="mb-3 has-text-centered">
+                        <img width="200px"
+                            src="https://i0.wp.com/liquidazona.com/wp-content/uploads/2019/05/2-164.jpg?resize=878%2C878&ssl=1"
+                            alt="">
+                    </figure>
+
+                    <figure class="mb-3 has-text-centered">
+                        <img width="200px"
+                            src="https://sites.google.com/site/wikikingburguer/_/rsrc/1456840600347/ofertas/ofertasdeburguerkinga1/wendys_2x1_miercoles_gallery.jpg"
+                            alt="">
+                    </figure>
+
+                    <figure class="mb-3 has-text-centered">
+                        <img width="200px"
+                            src="https://www.bentleysburger.es/wp-content/uploads/2020/07/promo-saldremosdeesta.jpg"
+                            alt="">
+                    </figure>
+                </div>
+
+            </aside>
+            <section class="column is-8" id="especiales">
+                <h2 class="title has-text-centered">Especiales</h2>
+                <h2 class="subtitle has-text-centered mt-5">Los favoritos de nuestros clientes </h2>
+                <div class="columns is-centered">
+                    <div class="column pl-6 ">
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/1.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/2.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/3.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column pl-6">
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/4.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/5.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/6.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column pl-6">
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/7.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/8.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <figure class="image is-128x128">
+                                <img src="img/9.jpg" alt="">
+                            </figure>
+                            <div class="">
+                                <a class="has-text-dark is-size-4 has-text-weight-bold">
+                                    Especiales
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="column is-8" id="cena" style="display: none;"></section>
+            <section class="column is-8" id="desayunos" style="display: none;"></section>
+        </div>
+        <hr>
+    </section>
+    <section class="container mt-6">
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img/aderezos.jpg" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h2 class="subtitle has-text-centered mt-5">Nuestros Aderezos</h2>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Accusamus enim, tenetur
+                            aspernatur quos pariatur, perspiciatis officiis, corporis
+                            quam iusto dolores cupiditate nisi corrupti saepe consequuntur
+                            facilis itaque atque repudiandae ut?
+                            <br>
+                        </div>
+                        <div class=" column is-2 buttons pt-6 ml-6 pl-6">
+                            <a class="button is-dark " href="aderesos.html" >
+                                <strong>Aprende Mas</strong>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img/chef.jpg" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h2 class="subtitle has-text-centered mt-5">Acerca de nuestro chef</h2>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Accusamus enim, tenetur
+                            aspernatur quos pariatur, perspiciatis officiis, corporis
+                            quam iusto dolores cupiditate nisi corrupti saepe consequuntur
+                            facilis itaque atque repudiandae ut?
+                            <br>
+                        </div>
+                        <div class=" column is-2 buttons pt-6 ml-6 pl-6">
+                            <a class="button is-dark ">
+                                <strong>Aprende Mas</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img/inf.jpg" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h2 class="subtitle has-text-centered mt-5">Informacion Nutricional</h2>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Accusamus enim, tenetur
+                            aspernatur quos pariatur, perspiciatis officiis, corporis
+                            quam iusto dolores cupiditate nisi corrupti saepe consequuntur
+                            facilis itaque atque repudiandae ut?
+                            <br>
+                        </div>
+                        <div class=" column is-2 buttons pt-6 ml-6 pl-6">
+                            <a class="button is-dark ">
+                                <strong>Aprende Mas</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contactos" class="mt-6 pt-6">
+        <div class="container">
+            <section class="hero is-$black-bis	">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <h2 class="title">
+                            Contactos
+                        </h2>
+                        <div class="columns">
+                            <div class="column">Calular: 777777</div>
+                            <div class="column"> <a href="">twiter</a> </div>
+                            <div class="column has-centered"> <a href=""> facebook</a></div>
+                            <div class="column"> <a href="">instagram</a></div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, magni tenetur? Suscipit consequuntur, tempora nostrum praesentium blanditiis dicta repudiandae soluta. Ut ab blanditiis ducimus deserunt nostrum fuga facilis ea distinctio.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non perspiciatis corrupti, officia enim distinctio beatae. Recusandae at ipsam in ducimus sint, dolores, a illum, laborum adipisci quas sed nulla officia!
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Arcane</strong> por <a href="https://jgthms.com">Carlos Mario Toro Martinez</a>. The source code
+                is licensed
+                Todos los derechos recervados
+            </p>
+        </div>
+    </footer>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCp7Zk4jJmtu1K-LD-ctFTXN0-mWDkcQB8",
+            authDomain: "proyecto-arcane.firebaseapp.com",
+            databaseURL: "https://proyecto-arcane.firebaseio.com",
+            projectId: "proyecto-arcane",
+            storageBucket: "proyecto-arcane.appspot.com",
+            messagingSenderId: "774102170492",
+            appId: "1:774102170492:web:edb9e730c5f79838cc02f9",
+            measurementId: "G-JC37XD5RZ6"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="javascript/javascript.js"></script>
+    <script src="javascript/modal.js"></script>
+
+
+</body>
+
+</html>

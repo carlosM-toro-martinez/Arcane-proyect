@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <title>Registrarse</title>
+</head>
+<body onload="observador(``)">
+    <header class="container" id="header">
+        <div class="container is-light columns">
+            <div class="column is-2">
+                <figure class="image is-128x128">
+                    <img src="img/logo.png"style="border-radius: 150px;
+                                                  border:5px solid #666;">
+                </figure>
+            </div>
+            <nav class="navbar column is-8 has-text-centered has-shadow" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="menu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="menu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link is-size-4 has-text-weight-bold">
+                                Nuestro menu
+                            </a>
+
+                            <div class="navbar-dropdown ">
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Desayuno
+                                </a>
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Almuerzo
+                                </a>
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Cena
+                                </a>
+                                <hr class="navbar-divider">
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Reportar un problema
+                                </a>
+                            </div>
+                        </div>
+
+                        <a class="navbar-item  is-size-4 has-text-weight-bold" href="index.html">
+                            Inicio
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="#contactos">
+                            Contactos
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="Ultimo.html">
+                            Lo ultimo
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="https://www.google.com/maps/@-19.559812,-65.7620635,3a,75y,54.28h,76.44t/data=!3m6!1e1!3m4!1sfnQPzPd_IPHgQ0H-vFY7rw!2e0!7i13312!8i6656">
+                            Localizar
+                        </a>
+
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+    </header>
+    <section>
+        <div  class="box mt-6 pt-6 pr-6 " style="max-width: 70%; margin: auto;">
+            <h2 class="title has-text-centered is-danger mb-6">Registrarse</h2>
+                <div class="px-6 py-6">
+                    <form action="#" id="rr" class="registro"style="margin: auto;">
+                        <div class="field">
+                            <label class="label" >Email</label>
+                            <div class="control">
+                            <input class="input" type="email" placeholder=" alexsmith@gmail.com" id="email">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">password</label>
+                            <div class="control">
+                            <input class="input" type="password" placeholder="******" id="contrasena">
+                            </div>
+                        </div>
+                        <div class="field is-grouped mt-6 has-text-centered columns ">
+                            <div class="control column">
+                                <input class="button is-link is-block is-large is-fullwidth" type="submit" id="r" value="Registrarce">
+                            </div>
+                            <div class="control column">
+                                <button class="button is-link is-light is-block is-large is-fullwidth">Cancelar</button>
+                            </div>
+                        </div>
+                        <p class="has-text-grey has-text-centered" >
+                            <a href="register.html">Por que debo registrarme ?</a> &nbsp;·&nbsp;
+                            <a href="../">¿Necesita ayuda? </a>
+                        </p>
+                    </form>
+                </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Arcane</strong> por <a href="https://jgthms.com">Carlos Mario Toro Martinez</a>. The source code
+                is licensed
+                Todos los derechos recervados
+            </p>
+        </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCp7Zk4jJmtu1K-LD-ctFTXN0-mWDkcQB8",
+            authDomain: "proyecto-arcane.firebaseapp.com",
+            databaseURL: "https://proyecto-arcane.firebaseio.com",
+            projectId: "proyecto-arcane",
+            storageBucket: "proyecto-arcane.appspot.com",
+            messagingSenderId: "774102170492",
+            appId: "1:774102170492:web:edb9e730c5f79838cc02f9",
+            measurementId: "G-JC37XD5RZ6"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script >
+        function observador(user){
+        firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var email = user.email;
+                correo = user.email
+            console.log("Auth: " + email);
+            console.log("este es mi correo"+ correo)
+            location.href=("index.html")
+        } else {
+            console.log("Usuario no registrado");
+            
+            // User is signed out.
+            // ...
+        }
+        });
+
+    }
+    </script>
+    <script>
+        var ver= document.getElementById("rr")
+        console.log(ver)
+        ver.addEventListener(`submit`, ()=>{
+        var email = document.getElementById(`email`).value
+        var password = document.getElementById(`contrasena`).value
+        console.log(email)
+        console.log(password)
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert("usuario no registrado")
+            // ...
+        });
+        console.log(email+` `+password)
+    })
+    </script>
+</body>
+</html>

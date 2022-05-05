@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/log.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+<body onload="cargar()">
+    <header class="container" id="header">
+        <div class="container is-light columns">
+            <div class="column is-2">
+                <figure class="image is-128x128">
+                    <img src="img/logo.png"style="border-radius: 150px;
+                                                  border:5px solid #666;">
+                </figure>
+            </div>
+            <nav class="navbar column is-8 has-text-centered has-shadow" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="menu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="menu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link is-size-4 has-text-weight-bold">
+                                Nuestro menu
+                            </a>
+
+                            <div class="navbar-dropdown ">
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Desayuno
+                                </a>
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Almuerzo
+                                </a>
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Cena
+                                </a>
+                                <hr class="navbar-divider">
+                                <a class="navbar-item is-size-4 has-text-weight-bold">
+                                    Reportar un problema
+                                </a>
+                            </div>
+                        </div>
+
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="index.html">
+                            Inicio
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="#contactos">
+                            Contactos
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="Ultimo.html">
+                            Lo ultimo
+                        </a>
+                        <a class="navbar-item is-size-4 has-text-weight-bold" href="https://www.google.com/maps/@-19.559812,-65.7620635,3a,75y,54.28h,76.44t/data=!3m6!1e1!3m4!1sfnQPzPd_IPHgQ0H-vFY7rw!2e0!7i13312!8i6656">
+                            Localizar
+                        </a>
+
+                    </div>
+                </div>
+            </nav>
+            <div class=" column is-2 buttons pt-6">
+                <h2 class="subtitle">ADMINISTRADOR</h2>
+            </div>
+        </div>
+
+    </header>
+    <h2 class="has-text-centered mt-6 title"> Pedidos del dia</h2>
+    <table  class=" table is-hoverable mt-6 has-text-centered" style="margin:auto">
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido paterno</th>
+            <th>Apellido materno</th>
+            <th>Direccion</th>
+            <th>Detalle</th>
+            <th>celular</th>
+        </thead>
+        <tbody id="pedidos">
+
+        </tbody>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+   
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyCp7Zk4jJmtu1K-LD-ctFTXN0-mWDkcQB8",
+        authDomain: "proyecto-arcane.firebaseapp.com",
+        databaseURL: "https://proyecto-arcane.firebaseio.com",
+        projectId: "proyecto-arcane",
+        storageBucket: "proyecto-arcane.appspot.com",
+        messagingSenderId: "774102170492",
+        appId: "1:774102170492:web:edb9e730c5f79838cc02f9",
+        measurementId: "G-JC37XD5RZ6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    </script>
+    <script>
+        function cargar(){
+            db.collection("pedidos").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+        let ver = document.getElementById(`pedidos`)
+        ver.innerHTML+=
+         `<td> ${doc.id}</td>
+         <td> ${doc.data().Nombre}</td>
+         <td> ${doc.data().Apellido_P}</td>
+         <td> ${doc.data().Apellido_M}</td>
+         <td> ${doc.data().DIreccion}</td>
+         <td> ${doc.data().Detalle}</td> 
+         <td> ${doc.data().Celular}</td>
+         <td> <input type="button" value="delete" onclick="borrar(\'${doc.id}'\ )"></td>
+         `
+         
+        console.log(`${doc.id}`);
+        });
+    });
+        }
+    function borrar (id){
+    console.log(id)
+    document.getElementById("")
+    db.collection("pedidos").doc(id).delete().then(function() {
+        console.log("Document successfully deleted!");
+        // document.getElementById("mostrar").innerHTML=""
+        // show()
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+}
+    </script>
+</body>
+</html>
